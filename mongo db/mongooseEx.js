@@ -6,7 +6,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/mongoosedb", {
   useUnifiedTopology: true
 });
 
-const User = mongoose.model("User", {
+
+
+const schema = mongoose.Schema({
   name: {
     type: String
   },
@@ -18,42 +20,43 @@ const User = mongoose.model("User", {
   }
 });
 
-//create
+const User=mongoose.model("user",schema);
+// create
 
-// const me = new User({
-//   name: "shivam",
-//   age: 20,
-//   status: "single"
-// });
+const me = new User({
+  name: "shivam",
+  age: 20,
+  status: "single"
+});
 
-// me.save()
-//   .then(user => console.log(user))
-//   .catch(e => {
-//     console.log(e);
-//   });
+me.save()
+  .then(user => console.log(user))
+  .catch(e => {
+    console.log(e);
+  });
 
 //read
-// User.find({}).then(user => {
-//   console.log(user);
-// });
+User.find({}).then(user => {
+  console.log(user);
+});
 
 //update
 
-// User.updateMany(
-//   { name: "yoyo" },
-//   {
-//     $set: {
-//       name: "shivam"
-//     }
-//   }
-// )
-//   .then(status => console.log(status))
-//   .catch(e => console.log(e));
+User.updateMany(
+  { name: "shivam" },
+  {
+    $set: {
+      name: "yoyo"
+    }
+  }
+)
+  .then(status => console.log(status))
+  .catch(e => console.log(e));
 
 //delete
 
-User.deleteOne({
-  status: "single"
-})
-  .then(user => console.log(user))
-  .catch(e => console.log(e));
+// User.deleteOne({
+//   status: "single"
+// })
+//   .then(user => console.log(user))
+//   .catch(e => console.log(e));

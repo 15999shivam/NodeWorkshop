@@ -11,7 +11,7 @@ console.log("original array: " + array); //array remains the same
 
 //===========================================================================================
 
-//forEach : to loop throuh array
+//forEach : to loop through array
 const originalArray = [1, 2, 3, 4, 5];
 const newArray = [];
 
