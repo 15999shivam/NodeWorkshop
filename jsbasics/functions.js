@@ -40,3 +40,10 @@ console.log(fun(1, 2));
 console.log(fun(5, 6));
 
 //diffrence between the arrow and regualar function is covered in objects part;
+
+
+//PRINTING AN ARRAY USING ARROW FUNCTION
+
+let arr=[1,2,3,4];
+
+arr.forEach(val=>console.log(val));
